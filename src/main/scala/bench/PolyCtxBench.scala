@@ -15,6 +15,7 @@ import org.graalvm.polyglot.*
   batchSize = 1
 )
 class PolyCtxBench {
+  // doesn't work
   val polyCtx = Context
     .newBuilder()
     .allowAllAccess(true)
@@ -29,6 +30,19 @@ class PolyCtxBench {
     .build()
   @Benchmark
   def wellHelloThere(): Unit = {
+    // // works when used like this
+    // val polyCtx = Context
+    //   .newBuilder()
+    //   .allowAllAccess(true)
+    //   .option("engine.Mode", "throughput")
+    //   .build()
+    // val jsSource = Source
+    //   .newBuilder(
+    //     "js",
+    //     "Math.random()",
+    //     "dummymodule"
+    //   )
+    //   .build()
     polyCtx.eval("js", "")
     polyCtx.eval(jsSource)
     ()
