@@ -9,7 +9,9 @@ lazy val root = project
     version := "0.1.0",
     scalaVersion := scala3Version,
 
-    libraryDependencies += "org.graalvm.sdk" % "graal-sdk" % "21.1.0",
-    libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
+    libraryDependencies ++= Seq(
+        "org.graalvm.sdk" % "graal-sdk" % "21.1.0" % "provided",
+        "ch.qos.logback" % "logback-classic" % "1.2.3"
+    )
   )
 
