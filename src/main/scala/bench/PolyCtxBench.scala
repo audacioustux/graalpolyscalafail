@@ -43,9 +43,7 @@ class PolyCtxBench {
     //     "dummymodule"
     //   )
     //   .build()
-    polyCtx.eval("js", "")
     polyCtx.eval(jsSource)
-    ()
   }
 
 }
